@@ -1,0 +1,10 @@
+{
+    "name": "angular-seed",
+    "version": "0.0.0",
+    "dependencies": {
+        "angular": "latest",
+        "bootstrap": "latest",
+        "angular-bootstrap": "latest",
+        "angular-ui-router": "#master"
+    }
+}
