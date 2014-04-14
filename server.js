@@ -1,9 +1,10 @@
 'use strict';
 
-//var fs          = require('fs');
-var http        = require('http');
+var express   	= require('express');
+var morgan      = require('morgan');
+var app         = express();
+var port    	= process.env.PORT || 8080;
 var socketio    = require('socket.io');
-var url         = require('url');
 var serialport	= require('serialport');
 var SerialPort	= serialport.SerialPort; // localize object constructor
 
@@ -80,31 +81,18 @@ function serialListener(debug)
    });  
 }
 
-function startServer(route,handle,debug)
+function startServer(debug)
 {
-	function onRequest(request, response) { 
-		var pathname = url.parse(request.url).pathname; 
-		console.log('Request for ' + pathname + ' received');
-		var content = route(handle,pathname,response,request,debug);
-		if(debug === true)
-		{
-			console.log(content);
-		}
-	}
-	
-	//var httpServer = http.createServer(onRequest).listen(8080, function() {
-	//	console.log('Server listening at: http://localhost:8080');
-	//});
-	var ecstatic = require('ecstatic')({
-  		root: __dirname + '/public',
-  		showDir: true,
-  		autoIndex: true
-	});
-	var httpServer = http.createServer(ecstatic).listen(8080);
-	
+	app.use(express.static(__dirname + '/public'));
+	app.use(morgan('dev'));
+
+	var httpServer = app.listen(port);
+	console.log('Server started on port ' + port);
+
 	serialListener(debug);
 	initSocketIO(httpServer,debug);
 }
 
-exports.start = startServer;
+startServer(false);
 
+exports.start = startServer;

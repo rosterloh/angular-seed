@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             js: {
-                files: ['Gruntfile.js', 'server.js', 'index.js', 'requestHandlers.js', 'route.js', 'public/js/**'],
+                files: ['Gruntfile.js', 'server.js', 'public/js/**'],
                 tasks: ['jshint', 'uglify'],
                 options: {
                     livereload: true
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
             	jshintrc: true,
                 reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
             },
-            build: ['Gruntfile.js', 'server.js', 'index.js', 'requestHandlers.js', 'route.js', 'public/js/**']
+            build: ['Gruntfile.js', 'server.js', 'public/js/**']
         },
         // configure uglify to minify js files -------------------------------------
         uglify: {
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
         },
         nodemon: {
             dev: {
-                script: 'index.js',
+                script: 'server.js',
                 options: {
                     args: [],
                     ignore: ['public/**'],
