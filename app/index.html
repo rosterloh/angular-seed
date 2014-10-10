@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="seed">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" type="text/css" href="app.min.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="#">Angular Seed</a>
+      </div>
+      <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="about">About</a></li>
+      </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <!-- Main Content -->
+    <section data-ui-view></section>
+
+  </div>
+  <script type="text/javascript" src="js/vendors.min.js"></script>
+  <script type="text/javascript" src="js/app.min.js"></script>
+  <script type="text/javascript" src="js/templates.min.js"></script>
+</body>
+</html>

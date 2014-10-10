@@ -5,9 +5,9 @@ A starter template for my Node.js Angular Socket.io Serial projects
 
 ## Install
 
-Grunt and bower required so install with 
+Gulp and Bower required so install with
 ```bash  
-$ npm install -g grunt-cli bower
+$ npm install -g gulp bower
 ```
 Otherwise everything can installed with
 ```bash
