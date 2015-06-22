@@ -1,33 +1,40 @@
 <!doctype html>
-<html lang="en" ng-app="seed">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" type="text/css" href="app.min.css">
-</head>
-<body>
+<html class="no-js">
+  <head>
+      <base href="/">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title ng-bind="pageTitle"></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
 
-  <!-- NAVIGATION -->
-  <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-          <a class="navbar-brand" ui-sref="#">Angular Seed</a>
-      </div>
-      <ul class="nav navbar-nav">
-          <li><a ui-sref="home">Home</a></li>
-          <li><a ui-sref="about">About</a></li>
-      </ul>
-  </nav>
+      <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
+      <md-content>
 
-    <!-- Main Content -->
-    <section data-ui-view></section>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
+              <ng-md-icon icon="menu" style="fill: white" size="36"></ng-md-icon>
+            </md-button>
+            <h2>
+              <span>Toolbar with Icon Buttons</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="More">
+              <!-- <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon> -->
+              <ng-md-icon icon="more_vert" style="fill: white" size="36"></ng-md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
 
-  </div>
-  <script type="text/javascript" src="js/vendors.min.js"></script>
-  <script type="text/javascript" src="js/app.min.js"></script>
-  <script type="text/javascript" src="js/templates.min.js"></script>
-</body>
+        <div ui-view></div>
+
+      </md-content>
+
+      <script src="js/main.js"></script>
+  </body>
 </html>

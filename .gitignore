@@ -1,3 +1,5 @@
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -16,15 +18,13 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-# Deployed apps should consider commenting this line out:
-# see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
+# Dependency directories
 node_modules
+bower_components
 
-.DS_Store
-.nodemonignore
-.sass-cache/
-.bower-*/
-.idea/
-bower_components/
-public/
+# Build files
+build
+templates.js
+
+#webstorm
+.idea

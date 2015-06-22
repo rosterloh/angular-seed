@@ -15,4 +15,4 @@ $ npm install
 ```
 ## Run
 
-Just run with grunt or npm start
+Just run with gulp or npm start
