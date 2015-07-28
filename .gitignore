@@ -23,8 +23,7 @@ node_modules
 bower_components
 
 # Build files
-build
-templates.js
+dist
 
 #webstorm
 .idea
